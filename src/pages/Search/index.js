@@ -26,7 +26,7 @@ const Search = () => {
         <div>Loading</div>
       ) : (
         <div>
-          <h1 className={styles.header}>SearcPage</h1>
+          <h1 className={styles.header}></h1>
           <SearchBar searchKey={searchKey} setRecipe={setRecipe} />
           <div>
             {recipe ? (

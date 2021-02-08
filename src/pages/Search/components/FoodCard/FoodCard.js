@@ -2,7 +2,7 @@ import React, {useContext} from "react";
 import styles from "./FoodCard.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUtensils } from "@fortawesome/free-solid-svg-icons";
-import { faHeart } from "@fortawesome/free-solid-svg-icons";
+import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../../../utility/AuthContext"
 import { addToStore} from  "../../../../utility/addToStore"
@@ -43,7 +43,7 @@ function FoodCard({ recipe }) {
             <span> Calories</span>
           </p>
           <div className={styles.icon}>
-            <FontAwesomeIcon onClick={addToList} className={styles["Heart"]} icon={faHeart} />
+            <FontAwesomeIcon onClick={addToList} className={styles["Plus"]} icon={faPlus} />
             <Link to={`/detail/${recipe.uri.split("_")[1]}`}>
               <FontAwesomeIcon
                 className={styles["Utensils"]}
