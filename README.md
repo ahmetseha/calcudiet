@@ -2,6 +2,16 @@
 
 ## [Live link of the project](https://determined-hodgkin-262833.netlify.app)
 
+### Project Members
+
+[Ahmet Seha Açar](https://github.com/ahmetseha)
+
+[Fahrettin Yılmaz](https://github.com/fyilmazy)
+
+[Hasan Elmacı](https://github.com/hasanelmaci)
+
+[Murat Yayla](https://github.com/muratyayla26)
+
 ![](images/demo.gif)
 
 Calcudiet has been developed as a group project during Kodluyoruz İstanbul Earlybird Front-End Talent Bootcamp.
