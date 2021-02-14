@@ -6,32 +6,26 @@ import { userInfoUpdater } from "../../../utility/userInfoUpdater";
 import { getUserInfo } from "../../../utility/getUserInfo";
 
 export const UserInfo = () => {
-  const { currentUser, bioData, setBioData } = useContext(AuthContext);
+  const { currentUser} = useContext(AuthContext);
   const userId = currentUser ? currentUser.uid : localStorage.getItem("userId");
   const [userData, setUserData] = useState({});
   const [isChanged, setIsChanged] = useState(false);
   const [dbData, setDbData] = useState({});
 
-  //componentdidmount -> getUserInfo -> firebase data cek -> setUserData(data)
-
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(async () => {
     const myData = await getUserInfo(userId).then((res) => res);
     setDbData(myData);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handleChange = (e) => {
     const target = e.target;
     const value = target.value;
     const name = target.name;
-
     setUserData({ ...userData, [name]: value });
   };
 
   const formHandler = (e) => {
     e.preventDefault();
-    console.log("USERDATA: ", userData);
     if (!isFormValid()) {
       return;
     }
@@ -83,7 +77,6 @@ export const UserInfo = () => {
             <p>Physical Activity Level:</p>
             <div className={styles.palText}>
               <p>
-                {console.log("paldatadb:", dbData.pal)}
                 {dbData.pal === "1"
                   ? "Little / No Excercise (sedentary lifestyle)"
                   : dbData.pal === "2"
@@ -153,7 +146,6 @@ export const UserInfo = () => {
               <option value="female">Female</option>
             </select>
           </div>
-
           <div>
             <select id="pal" name="pal" onChange={handleChange}>
               <option defaultValue="select">Physical Activity Level</option>

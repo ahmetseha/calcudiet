@@ -1,8 +1,7 @@
+//this functions returns user's calory and BMR infos
 import { db } from "./firestore";
 
-export const getUserInfo = async (currentUser) => {
-  let isExist = false;
-  const ownerId = currentUser;
+export const getUserInfo = async (ownerId) => {
   let output = {};
   try {
     await db
@@ -12,8 +11,6 @@ export const getUserInfo = async (currentUser) => {
       .then((res) => {
         output = res.docs[0].data();
       });
-    // eslint-disable-next-line no-unused-vars
-    isExist = true;
     return output;
   } catch (error) {
     return (output = { calories: 1 });
